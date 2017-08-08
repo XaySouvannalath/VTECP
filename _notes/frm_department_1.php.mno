@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_showdept" value="name:DepartmentID;datatype:string,name:DepartmentName;datatype:string" />
+	<infoitem key="UD_ShowDataForDelete" value="name:DepartmentID;datatype:string,name:DepartmentName;datatype:string" />
+</info>
