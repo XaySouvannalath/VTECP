@@ -32,6 +32,36 @@ myDatabase();
         <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+        <nav class="navbar navbar-default navbar-static-top top-bar fixed" id="navcolor">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar" id="whitefont"></span>
+                    <span class="icon-bar" id="whitefont"></span>
+                    <span class="icon-bar" id="whitefont"></span>
+                </button>
+                <a href="#" class="navbar-brand"><img class="modal-content" src="pic/crowneplazaicon.jpg" width="70"/></a>
+            </div>
+            <!-- Collection of nav links and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.php" id="whitefont"  >Home</a></li>
+                    <li><a href="index_department.php" class="active" id="whitefont"  >Department</a></li>
+                    <li><a href="index_banding.php" id="whitefont">Banding</a></li>
+                    <li><a href="index_position.php" id="whitefont"  >Position</a></li>
+                    <li><a href="index_coursetype.php" id="whitefont">Course Type</a></li>
+                    <li><a href="index_course.php" id="whitefont" >Course</a></li>
+                    <li><a href="index_training.php" id="whitefont" >Training</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"  id="whitefont"><span class="glyphicon glyphicon-lock"></span>&nbsp;Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
         <div class="container box">
             <h1 align="center">Live Add Edit Delete Datatables Records of Banding</h1>
             <br />
