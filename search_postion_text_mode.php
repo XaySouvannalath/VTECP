@@ -272,6 +272,11 @@ and open the template in the editor.
                 bottom:0;
                 left: 0
             }
+             
+            @page {
+    size: auto;   /* auto is the initial value */
+    margin: 10;  /* this affects the margin in the printer settings */
+}
         </style>
     </head>
     <body>
@@ -306,7 +311,7 @@ and open the template in the editor.
                 <label id="whitefont"><h2>Total is: <?php echo $i - 1; ?> courses</h2></label>  
             </div>
             <div id="printsection">
-                <button name="print" href=""   class="btn btn-danger" id="print">Print</button><br>
+                <button name="print" href=""   class="btn btn-danger btn-block btn-lg glyphicon glyphicon-print" id="print"> Print</button><br>
                
             </div>
             <br>

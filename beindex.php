@@ -244,6 +244,7 @@ include 'classQuery.php';
                 // background-image: url("pic/welcome-to-crowne-plaza.jpg");
                 background-repeat: round    ;
                 background-attachment: fixed;
+                background-size: cover;
 
 
             }
@@ -294,7 +295,7 @@ include 'classQuery.php';
                         <div class="card">
                             <div class="card-image">
                                 <a href="index_department.php">
-                                    <img border="0" alt="W3Schools" src="pic/Department.png" >
+                                    <img border="0" alt="department" src="pic/Department.png" >
                                 <span class="card-title">Department</span>
                             </div>
                             <div class="card-stacked">

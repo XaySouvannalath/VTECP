@@ -12,21 +12,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link src="/js/jquery.min.js" type="text/javascript" rel="stylesheet">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     
-
-        <!-- Compiled and minified JavaScript -->
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
-    <scrip src="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css"></scrip> 
+        <link rel="icon" href="pic/ok.ico">
 
         <style>
 
@@ -107,6 +93,9 @@
                 // background-image: url("pic/welcome-to-crowne-plaza.jpg");
                 background-repeat: round    ;
                 background-attachment: fixed;
+                background-size: cover;
+               // background-position: center;
+//               background-repeat: 
 
 
             }
@@ -145,102 +134,102 @@
             .glyphicon.glyphicon-lock{
                 font-size: 100%;
             }
- * {box-sizing:border-box}
+            * {box-sizing:border-box}
 
-        /* Slideshow container */
-        .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: auto;
-        }
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
 
-        .mySlides {
-            display: none;
-        }
+            .mySlides {
+                display: none;
+            }
 
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            margin-top: -22px;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-        }
+            /* Next & previous buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -22px;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+            }
 
-        /* Position the "next button" to the right */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
 
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
 
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
-        }
+            /* Caption text */
+            .text {
+                color: #f2f2f2;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
 
-        /* Number text (1/3 etc) */
-        .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
-        }
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
 
-        /* The dots/bullets/indicators */
-        .dot {
-            cursor:pointer;
-            height: 13px;
-            width: 13px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor:pointer;
+                height: 13px;
+                width: 13px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
 
-        .active, .dot:hover {
-            background-color: #717171;
-        }
+            .active, .dot:hover {
+                background-color: #717171;
+            }
 
-        /* Fading animation */
-        .fade {
-            -webkit-animation-name: fade;
-            -webkit-animation-duration: 1.5s;
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
 
-        @-webkit-keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
+            @-webkit-keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
 
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
-        #ncontent{
-            background-color: white;
-        }
-       
+            @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+            #ncontent{
+                background-color: white;
+            }
+
         </style>
     </head>
     <body >
@@ -280,13 +269,13 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#" id="whitefont" onclick="loadpage('home.php')">Home</a></li>
                         <li><a href="index_search.php" id="whitefont">Search</a></li>
-                         
+                        <li><a href="beindex.php" id="whitefont">Manage</a></li>
                         <li><a href="#" id="whitefont" onClick="loadpage('about.php')">About</a></li>
                         <li><a href="#" id="whitefont">Photo</a></li>
                         <li><a href="#" id="whitefont" onclick="loadpage('contact.php')">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="frm_login.php"  id="whitefont"><span class="glyphicon glyphicon-lock"></span>Login</a></li>
+
 
                     </ul>
 
@@ -300,16 +289,38 @@
                     <h1 align="center"><label id="whitefont">Life At Crowne Plaza</label></h1><hr>
 
                 </div>
-                
 
-                <div class=" col-lg-9">
+                <div class="slideshow-container w3-card-4">
 
-                    <div class="w3-card-4" id="ncontent">
-                        
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="pic/slide1.jpg" style="width:100%">
+                        <div class="text">Caption Text</div>
                     </div>
 
-                </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="pic/slide2.jpg" style="width:100%">
+                        <div class="text">Caption Two</div>
+                    </div>
 
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="pic/slide3.jpg" style="width:100%">
+                        <div class="text">Caption Three</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
 
             </div>
 
@@ -318,30 +329,12 @@
         </div>
     </div>
 
-   <br>
-    <footer class="footer-copyright"  style="background-color: #A00062;">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text" id="whitefont">LIFE AT CROWNE PLAZA</h5>
-                    <p class="grey-text text-lighten-4" id="whitefont">All my experience at Crowne Plaza Vientiane is here!</p>
-                </div>
-                
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                <h5 id="whitefont">Coded by Saiyavong</h5>
-                <a class="grey-text text-lighten-4 right" href="#!"></a>
-            </div>
-        </div>
-    </footer>
 
-   
+
 
     <!-- Script to Activate the Carousel -->
-   
- <script>
+
+    <script>
         var slideIndex = 0;
         showSlides();
 
@@ -361,10 +354,27 @@
             }
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
         }
 
     </script>
-    
+    <br>
+    <footer class="page-footer"  style="background-color: #A00062;">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text" id="whitefont">LIFE AT CROWNE PLAZA</h5>
+                    <p class="grey-text text-lighten-4" id="whitefont">All my experience at Crowne Plaza Vientiane is here!</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <h5 id="whitefont">Coded by Saiyavong</h5>
+                <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

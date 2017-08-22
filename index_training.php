@@ -9,8 +9,6 @@ group by PositionID";
 $objResult = mysqli_query($connect, $query_select_course);
 $objResultPosition = mysqli_query($connect, $query_select_position);
 $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
-
-
 ?>
 <html>
     <head>
@@ -23,7 +21,7 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
         <style>
-                        body
+            body
             {
                 margin:0;
                 padding:0;
@@ -112,7 +110,7 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                 color: white;
                 font-size: 120%;
                 alignment-adjust: central;
-                 font-weight: bold;
+                font-weight: bold;
             }
             body
             {
@@ -235,7 +233,7 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
             #ncontent{
                 background-color: white;
             }
-             body
+            body
             {
                 background-image: url('pic/blur.jpg');
                 // background-image: url("pic/welcome-to-crowne-plaza.jpg");
@@ -244,54 +242,54 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
 
 
             }
-                        #panelbody
+            #panelbody
             {
-                
+
             }
             .white1{
-                 color: white;
+                color: white;
                 font-size: 120%;
             }
             .tablehead
             {
                 font-weight: bolder;
                 font-size: 25px;
-                 color: white;
+                color: white;
             }
-            
+
         </style>
     </head>
     <body>
- <nav class="navbar navbar-default navbar-static-top top-bar fixed" id="navcolor">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar" id="whitefont"></span>
-                    <span class="icon-bar" id="whitefont"></span>
-                    <span class="icon-bar" id="whitefont"></span>
-                </button>
-                <a href="#" class="navbar-brand"><img class="modal-content" src="pic/crowneplazaicon.jpg" width="70"/></a>
+        <nav class="navbar navbar-default navbar-static-top top-bar fixed" id="navcolor">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar" id="whitefont"></span>
+                        <span class="icon-bar" id="whitefont"></span>
+                        <span class="icon-bar" id="whitefont"></span>
+                    </button>
+                    <a href="#" class="navbar-brand"><img class="modal-content" src="pic/crowneplazaicon.jpg" width="70"/></a>
+                </div>
+                <!-- Collection of nav links and other content for toggling -->
+                <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.php" id="whitefont"  >Home</a></li>
+                        <li><a href="index_department.php"  id="whitefont"  >Department</a></li>
+                        <li><a href="index_banding.php" id="whitefont">Banding</a></li>
+                        <li><a href="index_position.php" id="whitefont"  >Position</a></li>
+                        <li><a href="index_coursetype.php" id="whitefont">Course Type</a></li>
+                        <li><a href="index_course.php" id="whitefont" >Course</a></li>
+                        <li><a href="index_training.php" id="whitefont" class="active">Training</a></li>
+                        <li><a href="index_search.php" id="whitefont" >Search</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"  id="whitefont"><span class="glyphicon glyphicon-lock"></span>&nbsp;Log Out</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- Collection of nav links and other content for toggling -->
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.php" id="whitefont"  >Home</a></li>
-                    <li><a href="index_department.php"  id="whitefont"  >Department</a></li>
-                    <li><a href="index_banding.php" id="whitefont">Banding</a></li>
-                    <li><a href="index_position.php" id="whitefont"  >Position</a></li>
-                    <li><a href="index_coursetype.php" id="whitefont">Course Type</a></li>
-                    <li><a href="index_course.php" id="whitefont" >Course</a></li>
-                    <li><a href="index_training.php" id="whitefont" class="active">Training</a></li>
-                     <li><a href="index_search.php" id="whitefont" >Search</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"  id="whitefont"><span class="glyphicon glyphicon-lock"></span>&nbsp;Log Out</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
         <div class="container">
 
@@ -302,8 +300,8 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                 <div class="col-sm-4" >
                     <div class=""  >
                         <div class="panel panel-body" id="panelbody">
-                            <?php while($row2 =  mysqli_fetch_array($objResultPositionName)){ ?>
-                            <a id="whitefont" href="search_postion_text_mode.php?PositionID=<?php echo $row2['PositionID']; ?>"><?php echo $row2['PositionName']; ?>&nbsp;<span class="badge label label-danger"><?php echo $row2['Total_Course'] ?></span></a><br>
+<?php while ($row2 = mysqli_fetch_array($objResultPositionName)) { ?>
+                                <a id="whitefont" href="search_postion_text_mode.php?PositionID=<?php echo $row2['PositionID']; ?>"><?php echo $row2['PositionName']; ?>&nbsp;<span class="badge label label-danger"><?php echo $row2['Total_Course'] ?></span></a><br>
                             <?php } ?>
                         </div>
 
@@ -313,7 +311,7 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                 <div class="col-sm-8 ">
 
 
-                   
+
                     <div class="w3-card-4">
 
                         <div class="panel panel-body" id="panelbody">
@@ -325,10 +323,10 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                                         <div class="panel panel-body" id="panelbody">
                                             <label class="tablehead">Select Position</label>  
                                             <select name="PositionID" id="PositionID" class="form-control">  
-                                                <?php while ($row1 = mysqli_fetch_array($objResultPosition)) { ?>
+<?php while ($row1 = mysqli_fetch_array($objResultPosition)) { ?>
                                                     <option value="<?php echo $row1['PositionID']; ?>"><?php echo $row1['PositionName']; ?></option>
-                                                    
-                                                <?php } ?> 
+
+<?php } ?> 
                                             </select>  
                                             <br>
                                         </div>
@@ -337,8 +335,8 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                                     <label class="tablehead">Select which Course To Train</label>
                                     <div class="form-group">
                                         <select id="framework" name="framework[]" multiple class="form-control " >
-                                            <?php while ($row = mysqli_fetch_array($objResult)) { ?>
-                                                <option value="<?php echo $row['CourseID']; ?>"><?php echo $row['CourseName'] ; ?></option>
+<?php while ($row = mysqli_fetch_array($objResult)) { ?>
+                                                <option value="<?php echo $row['CourseID']; ?>"><?php echo $row['CourseName']; ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -346,38 +344,38 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
 
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-info btn-block" name="submit" value="Submit" />
-                                   
+
                                 </div>
-                                  
+
                             </form>
 
                         </div>
 
                     </div>
                     <br>
-                    
+
                     <div id="panelbody">
-                        
+
                         <div id="table-container">
-                            <?php
-                            $conn = mysqli_connect('localhost', 'root', '', 'nbs');
-                            $query = "select * from view_training1";
-                            $output = mysqli_query($conn, $query);
-                            echo '<table class="table table-stripe table-border success">';
-                            echo '<tr>
+<?php
+include 'db.php';
+$query = "select * from view_training1";
+$output = mysqli_query($connect, $query);
+echo '<table class="table table-stripe table-border success">';
+echo '<tr>
                                  <th class="tablehead">TrainingID</th>
                                     <th class="tablehead">Course</th>
                                     </tr>';
-                            while ($fetch = mysqli_fetch_assoc($output)) {
+while ($fetch = mysqli_fetch_assoc($output)) {
 
-                                echo '<tr>';
-                                echo '<td id="whitefont" align="center">' . $fetch['TrainingID'] . '</td>';
-                                echo '<td id="whitefont">' . $fetch['CourseName'] . '</td>';
-                                echo '<td><input type="button" data-id3="'.$fetch["TrainingID"].'" value="Delete" class="btn btn-danger btn_delete"></td>';
-                                echo '</tr>';
-                            };
-                            echo '</table>';
-                            ?>
+    echo '<tr>';
+    echo '<td id="whitefont" align="center">' . $fetch['TrainingID'] . '</td>';
+    echo '<td id="whitefont">' . $fetch['CourseName'] . '</td>';
+    echo '<td><input type="button" data-id3="' . $fetch["TrainingID"] . '" value="Delete" class="btn btn-danger btn_delete"></td>';
+    echo '</tr>';
+};
+echo '</table>';
+?>
 
                         </div>
                     </div>
@@ -388,27 +386,32 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
 
 
         </div>
-         <footer class="page-footer"  style="background-color: #A00062;">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text" id="whitefont">LIFE AT CROWNE PLAZA</h5>
-                    <p class="grey-text text-lighten-4" id="whitefont">All my experience at Crowne Plaza Vientiane is here!</p>
-                </div>
-                
-            </div>
-        </div>
-        <div class="footer-copyright">
+        <footer class="page-footer"  style="background-color: #A00062;">
             <div class="container">
-                <h5 id="whitefont">Coded by Saiyavong</h5>
-                <a class="grey-text text-lighten-4 right" href="#!"></a>
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text" id="whitefont">LIFE AT CROWNE PLAZA</h5>
+                        <p class="grey-text text-lighten-4" id="whitefont">All my experience at Crowne Plaza Vientiane is here!</p>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </footer>
+            <div class="footer-copyright">
+                <div class="container">
+                    <h5 id="whitefont">Coded by Saiyavong</h5>
+                    <a class="grey-text text-lighten-4 right" href="#!"></a>
+                </div>
+            </div>
+        </footer>
     <body>
         <script>
 
             $(document).ready(function () {
+                
+                
+                
+                
+                
 
                 //$('#btadd').click(function () {
                 //      var cc = $('#getcourse').val();
@@ -418,22 +421,21 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                 // 
                 $(document).on('click', '#btadd1', function () {
                     var cc = $('#btadd1').val();
-                    alert(cc);
+                //    alert(cc);
                 });
 
                 $('#PositionID').change(function () {
                     var getPositionID = $('#PositionID').val();
-                      //    var p =$('#hh').val()
-                   // $('#getPosition1').val(p);
-                    
-                   
+                    //    var p =$('#hh').val()
+                    // $('#getPosition1').val(p);
+
+
                     // var kkk = $('#ok').val();
-                  //       alert(kkk) ;
-                   //  $('#kk').val(kkk);
-                     
-    
-                           
-                         var keyword = $(this).val();
+                    //       alert(kkk) ;
+                    //  $('#kk').val(kkk);
+
+                    var keyword = $(this).val();
+                    //alert(keyword);
                     $.ajax(
                             {
                                 url: 'fetch_training.php',
@@ -448,29 +450,45 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                                 {
                                     $("#table-container").html(data);
                                 },
-                            });   
+                            });
                 });
 
 
 
 
-      $(document).on('click', '.btn_delete', function(){  
-           var id=$(this).data("id3");  
-           if(confirm("Are you sure you want to delete this?"))  
-           alert(id);
-           {  
-                $.ajax({  
-                     url:"delete_training.php",  
-                     method:"POST",  
-                     data:{id:id},  
-                     dataType:"text",  
-                     success:function(data){  
-                          alert(data);  
-                          fetch_data();  
-                     }  
-                });  
-           }  
-      });
+                $(document).on('click', '.btn_delete', function () {
+                    var id = $(this).data("id3");
+                    if (confirm("Are you sure you want to delete this?"))
+                            // alert(id);
+                            {
+                                $.ajax({
+                                    url: "delete_training.php",
+                                    method: "POST",
+                                    data: {id: id},
+                                    dataType: "text",
+                                    success: function (data) {
+                                     //   alert(data);
+                                        fetch_data();
+                                    }
+                                });
+                                var keyword = $(this).val();
+                                $.ajax(
+                                        {
+                                            url: 'fetch_training.php',
+                                            type: 'POST',
+                                            data: 'request=' + keyword,
+                                            beforeSend: function ()
+                                            {
+                                                $("#table-container").html('Working...');
+
+                                            },
+                                            success: function (data)
+                                            {
+                                                $("#table-container").html(data);
+                                            },
+                                        });
+                            }
+                });
 
 
 
@@ -536,12 +554,7 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
 
 
 
-                $("#fetchval").on('change', function ()
-                {
-                   
-                    
-                    
-                    
+                $("#fetchval").on('change', function (){
                     var keyword = $(this).val();
                     $.ajax(
                             {
@@ -559,7 +572,6 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                                 },
                             });
                 });
-
             });
 
         </script>

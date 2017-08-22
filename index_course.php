@@ -286,7 +286,7 @@ $objResult = mysqli_query($connect, $sql);
                       <li><a href="index_search.php" id="whitefont" >Search</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"  id="whitefont"><span class="glyphicon glyphicon-lock"></span>&nbsp;Log Out</a></li>
+                  
                 </ul>
             </div>
         </div>
@@ -434,7 +434,7 @@ $objResult = mysqli_query($connect, $sql);
                 }, 5000);
             }
         });
-       /** $('#insert').click(function (event) {
+         $('#insert').click(function (event) {
             if ($('#insert').val() == 'Insert') {
                 var CourseID = $('#CourseID').val();
                 var CourseName = $('#CourseName').val();
@@ -447,7 +447,12 @@ $objResult = mysqli_query($connect, $sql);
                     $.ajax({
                         url: "insert_course.php",
                         method: "POST",
-                        data: {CourseID: CourseID, CourseTypeID: CourseTypeID, CourseName: CourseName, WhenTrain: WhenTrain},
+                        data: {
+                            CourseID: CourseID,
+                            CourseTypeID: CourseTypeID, 
+                            CourseName: CourseName,
+                            WhenTrain: WhenTrain
+                        },
                         beforeSend: function () {
                             $('#insert').val("Inserting");
                         },
@@ -472,10 +477,10 @@ $objResult = mysqli_query($connect, $sql);
                     alert("Course Name is required");
                 }
             }
-            else if ($('#insert').val() == "Update")
+            else if($('#insert').val()== "Update")
             {
                 var course_id = $(this).attr("id");
-                var CourseID = $('#PositionID').val();
+                var CourseID = $('#CourseID').val();
                 var CourseTypeID = $('#CourseTypeID').val();
                 var CourseName = $('#CourseName').val();
                 var WhenTrain = $('#WhenTrain').val();
@@ -492,23 +497,26 @@ $objResult = mysqli_query($connect, $sql);
                         $('#user_data').DataTable().destroy();
                         fetch_data();
                     }
-                }
+                });
+                 setInterval(function () {
+                    $('#alert_message').html('');
+                }, 5000);
             }
-        }); **/
+        });
         //Update
         $(document).on('click', '.edit', function () {
             var course_id = $(this).attr("id");
             $.ajax({
-                url: "update_course.php",
+                url: "fetch_course_for_update.php",
                 method: "POST",
                 data: {course_id: course_id},
                 dataType: "json",
                 success: function (data) {
-                    $('#courseid').val(data.CourseID);
-                    $('#coursetypeid').val(data.CourseTypeID);
-                    $('#coursetypeid').text(data.CourseTypeName);
-                    $('#coursename').val(data.CourseName);
-                    $('#when').val(data.WhenTraing);
+                    $('#CourseID').val(data.CourseID);
+                    $('#CourseTypeID').val(data.CourseTypeID);
+                    $('#CourseTypeID').text(data.CourseTypeName);
+                    $('#CourseName').val(data.CourseName);
+                    $('#WhenTrain').val(data.WhenTrain);
                     $('#course_id').val(data.id);
                     $('#insert').val("Update");
                     $('#add_data_Modal').modal('show');

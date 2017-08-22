@@ -12,7 +12,7 @@ include 'db.php';
            SET CourseTypeID='$CourseTypeID',   
            CourseName='$CourseName',   
            WhenTrain = '$WhenTrain'        
-           WHERE PositionID='".$_POST["CourseID"]."'";  
+           WHERE CourseID='".$_POST["CourseID"]."'";  
         if(mysqli_query($connect,$query)){
             echo 'Data Updated';
            // echo $query;

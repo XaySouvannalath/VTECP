@@ -1,0 +1,7 @@
+AuthUserFile \xampp\htdocs\TraineeCPVTE\.htpassword
+AuthType Basic
+AuthName "Please Login"
+
+<limit GET POST>
+require valid-user
+</limit>

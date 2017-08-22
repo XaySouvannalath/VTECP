@@ -285,7 +285,7 @@ myDatabase();
                      <li><a href="index_search.php" id="whitefont" >Search</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"  id="whitefont"><span class="glyphicon glyphicon-lock"></span>&nbsp;Log Out</a></li>
+                    
                 </ul>
             </div>
         </div>

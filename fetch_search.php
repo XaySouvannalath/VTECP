@@ -9,14 +9,15 @@ if (isset($_POST["query"])) {
     $query = "
   SELECT * FROM tb_position 
   WHERE PositionID LIKE '%" . $search . "%'
-  OR PositionName LIKE '%" . $search . "%' 
+  OR PositionName LIKE '" . $search . "%'
+      OR PositionName = '". $search ."'
  
  ";
 } else {
     $query = "
   SELECT * FROM tb_position ORDER BY PositionID
  ";
-}
+} 
 $result = mysqli_query($connect, $query);
 if (mysqli_num_rows($result) > 0) {
 
@@ -44,8 +45,8 @@ if (mysqli_num_rows($result) > 0) {
                                 <div class="card-action">
                                     
                                   
-                                    <a href="search_postion_text_mode.php?PositionID='. $row['PositionID'] .'" class="waves-effect waves-light btn">Show Course List</a>
-
+                                    <a href="search_postion_text_mode.php?PositionID='. $row['PositionID'] .'" class="waves-effect waves-light btn">Show Course List</a><br><br>
+                                         <a href="search_result.php?PositionID='. $row['PositionID'] .'" class="waves-effect waves-light btn">Show Course List By Group Course</a>
                                 </div>
                             </div>
                             </div>
