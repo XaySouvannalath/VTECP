@@ -1,7 +1,7 @@
 <?php
 include 'db.php';
-$query_select_course = "select CourseID, CourseName from tb_course";
-$query_select_position = "select PositionID, PositionName from tb_position";
+$query_select_course = "select PositionID, PositionName from tb_position";
+$query_select_position = "select CourseID, CourseName from tb_course";
 $query_selet_positionName = "select PositionID,PositionName, COUNT(PositionID) as Total_Course FROM view_training2 
 group by PositionID";
 
@@ -21,12 +21,9 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
         <link href="theme.css" rel="stylesheet">
-        <style>
-
-        </style>
     </head>
     <body>
-       <nav class="navbar navbar-default navbar-static-top top-bar fixed" id="navcolor">
+      <nav class="navbar navbar-default navbar-static-top top-bar fixed" id="navcolor">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -72,42 +69,32 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
 
 
                 <div class="col-sm-4" >
-                    <div class="panel" id="panelbody">
+                    <div class="panel" id="panelbody" >
                         <div class="panel panel-heading getwhitefont text-center" id="panelbody">
-                            Sum Course for Position
+                            Sum Position for Course 
                         </div>
-                        <div class="panel-body  ">
-                            <div class="loadsum">
+                        <div style="padding: 10px;" class="  countcourse" id="">
 
-                            </div>
-                        </div> 
+                        </div>
+
                     </div>
+
                 </div>
-
-
-
-
-
-
-                <div class="col-sm-8 ">
-
-
-
-                    <div class="w3-card-4 panel " id="panelbody">
+                <div class="col-sm-8">
+                    <div class="w3-card-4 panel " id="panelbody" >
                         <div class="panel panel-heading getwhitefont text-center" id="panelbody">
                             Manage Data
                         </div>
-                        <div class="panel panel-body panelsai" id="">
-
+                        <div class="panel panel-body panelsai" id=" ">
                             <form method="post" id="framework_form">
                                 <div class="form-group">
                                     <div >
-                                        <br>
-                                        <div class="panel panel-body panelsai" id=" ">
-                                            <label class="tablehead">Select Position</label>  
-                                            <select name="PositionID" id="PositionID" class="form-control">  
+
+                                        <div class="panel panel-body panelsai" id="">
+                                            <label class="tablehead">Select Course</label>  
+                                            <select name="CourseID" id="CourseID" class="form-control">  
                                                 <?php while ($row1 = mysqli_fetch_array($objResultPosition)) { ?>
-                                                    <option value="<?php echo $row1['PositionID']; ?>"><?php echo $row1['PositionName']; ?></option>
+                                                    <option value="<?php echo $row1['CourseID']; ?>"><?php echo $row1['CourseName']; ?></option>
 
                                                 <?php } ?> 
                                             </select>  
@@ -115,11 +102,11 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                                         </div>
                                         <br>
                                     </div>
-                                    <label class="tablehead">Select which Course To Train</label>
+                                    <label class="tablehead">Select Position</label>
                                     <div class="form-group">
-                                        <select id="framework" name="framework[]" multiple class="form-control" >
+                                        <select id="framework" name="framework[]" multiple class="form-control " >
                                             <?php while ($row = mysqli_fetch_array($objResult)) { ?>
-                                                <option value="<?php echo $row['CourseID']; ?>"><?php echo $row['CourseName']; ?></option>
+                                                <option value="<?php echo $row['PositionID']; ?>"><?php echo $row['PositionName']; ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -137,14 +124,13 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                     </div>
                     <br>
 
-
                     <div class="panel" id="panelbody">
 
                         <div class="panel panel-heading getwhitefont text-center" id="panelbody">
                             Show Data
                         </div>
+                        <div class="panel-body" id="loadtable">
 
-                        <div class="panel-body" id="table_container">
                         </div>
                     </div>
                 </div>
@@ -175,32 +161,32 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
         <script>
 
             $(document).ready(function () {
-                load_sum_course_for_position();
-                load_data($('#PositionID').val());
-                function load_sum_course_for_position()
+               load_data($('#CourseID').val());
+                show_sum_position_for_course();
+                function show_sum_position_for_course()
                 {
-                    $('.loadsum').load('show_sum_course_for_position.php');
+                    $('.countcourse').load('show_sum_position_for_course.php');
                 }
                 function load_data(query)
                 {
-                    var search = $('#PositionID').val();
+
                     $.ajax({
-                        url: "fetch_training.php",
+                        url: "fetch_training_by_course.php",
                         method: "POST",
                         data: {query: query},
                         success: function (data)
 
                         {
-                            $('#table_container').html(data);
+                            $('#loadtable').html(data);
                         }
                     });
                 }
 
-                $('#PositionID').change(function () {
 
-                    load_data($('#PositionID').val());
+                $('#CourseID').change(function () {
+                    var search = $('#CourseID').val();
+                    load_data(search);
                 });
-
 
 
 
@@ -260,8 +246,9 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                                     success: function (data) {
                                         //   alert(data);
                                         //  fetch_data();
-                                        load_data($('#PositionID').val());
-                                        load_sum_course_for_position();
+                                        var search = $('#CourseID').val();
+                                        load_data(search);
+                                        show_sum_position_for_course();
                                     }
                                 });
                                 var keyword = $(this).val();
@@ -319,7 +306,7 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                  
                  **/
                 $('#framework').multiselect({
-                    nonSelectedText: 'Select Course',
+                    nonSelectedText: 'Select Position',
                     enableFiltering: true,
                     enableCaseInsensitiveFiltering: true,
                     buttonWidth: '100%'
@@ -330,7 +317,7 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                     var form_data = $(this).serialize();
                     //  alert(form_data);
                     $.ajax({
-                        url: "insert.php",
+                        url: "insert_training_by_course.php",
                         method: "POST",
                         data: form_data,
                         success: function (data)
@@ -339,9 +326,10 @@ $objResultPositionName = mysqli_query($connect, $query_selet_positionName);
                                 $(this).prop('selected', false);
                             });
                             $('#framework').multiselect('refresh');
-                            // alert(data);
-                            load_data($('#PositionID').val());
-                            load_sum_course_for_position();
+                            //   alert(data);
+                            //var search = $('#CourseID').val();
+                            load_data($('#CourseID').val());
+                            show_sum_position_for_course();
                         }
                     });
                 });

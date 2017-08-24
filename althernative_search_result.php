@@ -1,40 +1,22 @@
-<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
-<link href="kltheme.css" rel="stylesheet">
-<style>
-
-
-</style>
-
-<article class="container-fluid mt-5 mb-5">
-    
-    <div class="row">
-        
-        
-        
-     
-        <div class="col-1"></div>
-        
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-5">
-
-            <div class="card kl-card kl-xl kl-reveal kl-fade kl-overlay kl-show kl-slide-in">
+<div class="card kl-card kl-xl kl-reveal kl-fade kl-overlay kl-show kl-slide-in">
                 <div class="kl-card-block kl-md bg-primary kl-shadow-br kl-overlay">
                     <div class="kl-card-overlay kl-card-overlay-split-v kl-dark kl-inverse">
                         <div class="kl-card-overlay-item">
                             <div class="kl-figure-block">
-                                <span class="kl-figure kl-txt-shadow">26k</span>
-                                <span class="kl-title">Followers</span>
+                                <span class="kl-figure kl-txt-shadow">' . $row["PositionName"] . '</span>
+                                 
                             </div>
                         </div>
                         <div class="kl-card-overlay-item">
                             <div class="kl-figure-block">
-                                <span class="kl-figure">109</span>
-                                <span class="kl-title">Following</span>
+                                <span class="kl-figure">' . getPositionCourse($row["PositionID"]) . '</span>
+                                <span class="kl-title">Courses</span>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="kl-card-avatar kl-md kl-pm kl-slow"><img class="kl-b-danger kl-b-circle kl-b-3 kl-reveal kl-slow kl-shadow-br kl-spin kl-fade" src="pic/pos.svg"></a> 
+                    <a href="search_result.php?PositionID=' . $row['PositionID'] . '" class="kl-card-avatar kl-md kl-pm kl-slow"><img class="kl-b-danger kl-b-circle kl-b-3 kl-reveal kl-slow kl-shadow-br kl-spin kl-fade" src="pic/pos.svg"></a> 
                     <div class="kl-background">
-                        <img src="pic/ihg.jpg">
+                        <img src="pic/pos1.jpg">
                     </div>
                     <div class="kl-card-item kl-pbl kl-card-social kl-slide-in">
                         <hr class="hw">
@@ -46,14 +28,4 @@
                         <span class="badge badge-danger">Offline</span>
                     </div>
                 </div>
-            </div> <!-- card end -->
-            
-             
-            
-        </div><!-- column end -->
-        
-         
-        
-    </div>
-    
-</article>
+            </div>

@@ -6,14 +6,17 @@ $output = '';
 if (isset($_POST["query"])) {
     $search = mysqli_real_escape_string($connect, $_POST["query"]);
     $query = "
-        Select * from view_training2 
-        where PositionID = '".$search."'
+       select T.TrainingID, P.PositionName 
+from tb_training T, tb_position P
+where T.PositionID = P.PositionID and T.CourseID = '".$search."'
             
             ";
 }
 else{
     $query = "
-        Select * from view_training2       
+       select T.TrainingID, P.PositionName 
+from tb_training T, tb_position P
+where T.PositionID = P.PositionID      
             
             ";
 }
@@ -24,7 +27,7 @@ $output .= '
                             <thead>
                                 <tr>
                                      
-                                    <th class="tablehead" align="center">Course Name</th>
+                                    <th class="tablehead" align="center">Position Name</th>
                                     <th id="whitefont">Option</th>
                                 </tr>
                             </thead>
@@ -36,8 +39,8 @@ $output .= '
         $output .='
           
  <tr>
-        
-     <td id="whitefont">' . $row['CourseName'] . '</td>
+       
+     <td id="whitefont">' . $row['PositionName'] . '</td>
        <td><input type="button" data-id3="' . $row["TrainingID"] . '" value="Delete" class="btn btn-danger btn_delete   "></td> 
      
  <tr>
@@ -49,7 +52,7 @@ $output .= '
     $output .= '  </table>     ';
      echo $output;
 } else {
-     echo '<h1 class="getwhitefont">No Data For Now</h1>';
+    echo '<h1 class="getwhitefont">No Data For Now</h1>';
 }
 
 

@@ -2,7 +2,6 @@
 include 'db.php';
 include './classQuery.php';
 //fetch.php
-$connect = mysqli_connect("localhost", "root", "", "nbs");
 $output = '';
 if (isset($_POST["query"])) {
     $search = mysqli_real_escape_string($connect, $_POST["query"]);
@@ -33,7 +32,7 @@ if (mysqli_num_rows($result) > 0) {
                              <center><h1 class="tablehead">' . $row["PositionName"] . '</h1></center> <hr>
                             <center> <label id="whitefont" class="text-center" >Position: ' . $row["PositionName"] . ' </label></center>  
                            <center>  <label id="whitefont" class="text-center">All Course To Train: ' . getPositionCourse($row["PositionID"]) . '</label></center> &nbsp; <hr>
-                         <center>   <a id="btnhover1" href="search_postion_text_mode.php?PositionID=' . $row['PositionID'] . '" class="btn btn-success btn-inline">Show Course List</a>
+                         <center>   <a id="btnhover1" href="search_postion_text_mode.php?PositionID=' . $row['PositionID'] . '" class="btn btn-success btn-inline">Show Course List  </a>
                             <a id="btnhover2" href="search_result.php?PositionID=' . $row['PositionID'] . '" class="btn btn-info btn-inline ">Show Course List By Group Course</a> <br><br></center>
                         </div>
                        </div>

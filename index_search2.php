@@ -8,60 +8,51 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Search</title>
-        <link href="theme.css" rel="stylesheet">
-        <link href="search_theme.css" rel="stylesheet">
+
 
         <style>
 
         </style>
     </head>
     <body>
-                    
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/x-icon" href="pic/search1600.png" />
+        <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+        <link href="kltheme.css" rel="stylesheet">
+        <link href="theme.css" rel="stylesheet">
+        <link href="search_theme.css" rel="stylesheet">
         <br>
 
-        <div class="container  ">
+        <div class="container">
 
             <br>
-            <div class="jumbotron card" id="panelbody">
+            <div class="jumbotron card " id="panelbody">
 
                 <form>
                     <img src="pic/search.ico" width="10%"><input class="ami inputsearch inline" name="search_text" id="search_text" type="search"   placeholder="Search by Position..."  >
                     <div id="myProgress">
-                <div id="myBar"></div>
+                        <div id="myBar"></div>
                     </div>
                 </form>
             </div>
             <br>
 
 
+            <div  class="" id="result"></div> 
 
-            <div   id="result"></div><br
 
         </div>
     </div>
-    <br>
-
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-
+ 
 </body>
 <script>
 
-$('#myBar')
+    $('#myBar')
 
     $(document).ready(function () {
+        $('#search_text').focus();
         $('#myBar').hide();
         if ($('#search_text').val() == '') {
             $('#result').html('');
@@ -90,14 +81,14 @@ $('#myBar')
                 $('#myBar').show();
                 move();
                 load_data(search);
-                 
+
             }
             else
             {
                 $('#myBar').show();
-                 move();
+                move();
                 $('#result').html('');
-                
+
             }
         });
 
@@ -116,7 +107,7 @@ $('#myBar')
                 }
             }
         }
-         
+
 
     });
 </script>
